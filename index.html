@@ -67,7 +67,7 @@ button{cursor:pointer}
 :focus-visible{outline:3px solid var(--accent);outline-offset:2px}
 h1,h2,h3,p{margin:0}
 .muted{color:var(--muted)}
-#app{max-width:560px;margin:0 auto;padding:0 0 calc(100px + env(safe-area-inset-bottom))}
+#app{overflow-x:clip;max-width:560px;margin:0 auto;padding:0 0 calc(100px + env(safe-area-inset-bottom))}
 .body{padding:0 16px}
 .top{margin-bottom:14px}
 .eyebrow{font-size:13px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--accent)}
@@ -294,8 +294,8 @@ textarea{resize:vertical;min-height:92px}
 .tag.bad{color:var(--bad-text)}
 .day-row.miss{background:var(--miss);border-color:transparent}
 .add-day{margin-top:14px}
-@keyframes inNext{from{opacity:0;transform:translateX(28px)}to{opacity:1;transform:none}}
-@keyframes inPrev{from{opacity:0;transform:translateX(-28px)}to{opacity:1;transform:none}}
+@keyframes inNext{from{transform:translateX(14px)}to{transform:none}}
+@keyframes inPrev{from{transform:translateX(-14px)}to{transform:none}}
 .anim-next{animation:inNext .2s ease}
 .anim-prev{animation:inPrev .2s ease}
 @media (prefers-reduced-motion:reduce){.anim-next,.anim-prev{animation:none}}
@@ -1536,7 +1536,8 @@ textarea{resize:vertical;min-height:92px}
     closePopover();
     var y = window.scrollY;
     var node = view === 'today' ? viewToday() : view === 'calendar' ? viewCalendar() : viewSettings();
-    if (nextAnim) { node.classList.add('anim-' + nextAnim); nextAnim = ''; }
+    // Only the content below the header slides. The header panel stays solid, so nothing flashes.
+    if (nextAnim) { var tgt = node.querySelector('.body'); if (tgt) tgt.classList.add('anim-' + nextAnim); nextAnim = ''; }
     app.replaceChildren(node);
     fab.hidden = !(view === 'today' && state.habits.length > 0);
     Array.prototype.forEach.call(navEl.children, function (b) {
