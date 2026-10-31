@@ -17,7 +17,7 @@
   --bg:#eaeef4;--surface:#ffffff;--surface2:#e6eaf1;--text:#111827;--muted:#566070;--border:#dbe1ea;
   --accent:#2563eb;--accent-ink:#ffffff;--ok:#16a34a;--ok-ink:#ffffff;--ok-soft:#e2f5e8;--ok-text:#15803d;
   --danger:#dc2626;--bad-text:#b91c1c;--warn-text:#b45309;--l3:#16a34a;--miss:rgba(220,38,38,.10);
-  --hero1:#2563eb;--hero2:#1d4ed8;--hero-ctl:rgba(255,255,255,.17);--hero-shadow:rgba(37,99,235,.30);--sheen:rgba(255,255,255,.16);--hero-edge:inset 0 0 0 transparent;
+  --hero1:#2563eb;--hero2:#1d4ed8;--hero-ctl:rgba(255,255,255,.17);--hero-shadow:rgba(37,99,235,.30);--sheen:rgba(255,255,255,.10);--hero-edge:inset 0 0 0 transparent;
   --shadow:0 1px 2px rgba(16,24,40,.06),0 4px 14px rgba(16,24,40,.08);
   --pop:0 10px 30px rgba(16,24,40,.22),0 2px 6px rgba(16,24,40,.1);
   color-scheme:light;
@@ -27,7 +27,7 @@
     --bg:#0a0a0a;--surface:#171717;--surface2:#262626;--text:#f5f5f5;--muted:#a3a3a3;--border:#2b2b2b;
     --accent:#60a5fa;--accent-ink:#0a0a0a;--ok:#4ade80;--ok-ink:#052e16;--ok-soft:#10261a;--ok-text:#4ade80;
     --danger:#f87171;--bad-text:#fca5a5;--warn-text:#fbbf24;--l3:#4ade80;--miss:rgba(248,113,113,.16);
-    --hero1:#2563eb;--hero2:#1e3a8a;--hero-ctl:rgba(255,255,255,.14);--hero-shadow:rgba(59,130,246,.34);--sheen:rgba(255,255,255,.22);--hero-edge:inset 0 1px 0 rgba(255,255,255,.28);
+    --hero1:#2563eb;--hero2:#1e3a8a;--hero-ctl:rgba(255,255,255,.14);--hero-shadow:rgba(59,130,246,.34);--sheen:rgba(255,255,255,.13);--hero-edge:inset 0 0 0 transparent;
     --shadow:0 1px 0 rgba(255,255,255,.05) inset,0 6px 16px rgba(0,0,0,.45);--pop:0 10px 30px rgba(0,0,0,.7);
     color-scheme:dark;
   }
@@ -36,7 +36,7 @@
   --bg:#0a0a0a;--surface:#171717;--surface2:#262626;--text:#f5f5f5;--muted:#a3a3a3;--border:#2b2b2b;
   --accent:#60a5fa;--accent-ink:#0a0a0a;--ok:#4ade80;--ok-ink:#052e16;--ok-soft:#10261a;--ok-text:#4ade80;
   --danger:#f87171;--bad-text:#fca5a5;--warn-text:#fbbf24;--l3:#4ade80;--miss:rgba(248,113,113,.16);
-  --hero1:#2563eb;--hero2:#1e3a8a;--hero-ctl:rgba(255,255,255,.14);--hero-shadow:rgba(59,130,246,.34);--sheen:rgba(255,255,255,.22);--hero-edge:inset 0 1px 0 rgba(255,255,255,.28);
+  --hero1:#2563eb;--hero2:#1e3a8a;--hero-ctl:rgba(255,255,255,.14);--hero-shadow:rgba(59,130,246,.34);--sheen:rgba(255,255,255,.13);--hero-edge:inset 0 0 0 transparent;
   --shadow:0 1px 0 rgba(255,255,255,.05) inset,0 6px 16px rgba(0,0,0,.45);--pop:0 10px 30px rgba(0,0,0,.7);
   color-scheme:dark;
 }
@@ -243,7 +243,7 @@ textarea{resize:vertical;min-height:92px}
 #toast{position:fixed;left:50%;bottom:calc(84px + env(safe-area-inset-bottom));transform:translate(-50%,12px);background:var(--text);color:var(--bg);padding:10px 16px;border-radius:12px;font-size:14px;font-weight:650;max-width:88vw;opacity:0;pointer-events:none;transition:opacity .2s,transform .2s;z-index:200;text-align:center}
 #toast.show{opacity:1;transform:translate(-50%,0)}
 /* header panel */
-.hero{position:relative;background:radial-gradient(120% 90% at 92% -12%,var(--sheen),transparent 62%),linear-gradient(160deg,var(--hero1),var(--hero2));color:#fff;padding:calc(18px + env(safe-area-inset-top)) 16px 14px;border-radius:0 0 26px 26px;box-shadow:0 10px 26px var(--hero-shadow),var(--hero-edge);margin-bottom:20px}
+.hero{position:relative;background:radial-gradient(90% 70% at 100% 72%,var(--sheen),transparent 66%),linear-gradient(180deg,var(--hero1),var(--hero2));color:#fff;padding:calc(18px + env(safe-area-inset-top)) 16px 14px;border-radius:0 0 26px 26px;box-shadow:0 10px 26px var(--hero-shadow),var(--hero-edge);margin-bottom:20px}
 .hero h1{margin:0;font-size:27px;line-height:1.15;color:#fff}
 .hero .eyebrow{color:rgba(255,255,255,.8)}
 .hero-slim{padding-bottom:20px}
